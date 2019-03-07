@@ -1,4 +1,3 @@
-public class MySpecialArrayUtils {
 public static void reverse(int[] arr) {
 		int temp;
 		int sz = arr.length;
@@ -52,4 +51,14 @@ public static void reverse(int[] arr) {
 		}
 		return temp;
 	}
+	public static long fibonacci(int n) {
+	long ans=1, temp1=0, temp2=1;
+	if (n==0)
+		return 0;
+	for(int i = 0; i<n-3; ++i) {
+		temp1 =temp2;
+		temp2 = ans;
+		ans = temp1+temp2;
+	}
+	return ans;
 }
