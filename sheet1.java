@@ -1,4 +1,3 @@
-import java.util.*;
 public class MySpecialArrayUtils {
 public static void reverse(int[] arr) {
 		int temp;
@@ -42,29 +41,15 @@ public static void reverse(int[] arr) {
 			}
 		}
 	}
-	public static void main(String[] args) {
-		int n;
-		Scanner a = new Scanner(System.in);
-		n = a.nextInt();
-		int [] arr = new int [n];
-		for(int i=0; i<n; ++i) {
-			arr[i] = a.nextInt();
+	public static int [][] transpose(int[][] arr){
+		int r = arr.length;
+		int c = arr[0].length;
+		int [][] temp = new int[c][r];
+		for(int i=0; i<r; ++i){
+			for(int j=0; j<c; ++j){
+				temp[j][i] = arr[i][j];
 			}
-		int val;
-		val = a.nextInt();
-		for(int i=0; i<n; ++i) {
-			System.out.print(arr[i]);
-			System.out.print(' ');
-			}
-		System.out.println();
-		MySpecialArrayUtils test = new MySpecialArrayUtils();
-		test.moveValue(arr, val);
-		for(int i=0; i<n; ++i) {
-			System.out.print(arr[i]);
-			System.out.print(' ');
-			}
-		
-
+		}
+		return temp;
 	}
-
 }
