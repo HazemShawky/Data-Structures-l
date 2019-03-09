@@ -53,7 +53,7 @@ public static void reverse(int[] arr) {
 	}
 	public static long fibonacci(int n) {
 	long ans=1, temp1=0, temp2=1;
-	if (n==0)
+	if (n==1)
 		return 0;
 	for(int i = 0; i<n-3; ++i) {
 		temp1 =temp2;
