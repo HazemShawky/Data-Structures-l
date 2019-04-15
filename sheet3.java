@@ -25,8 +25,10 @@ public class findPlayer implements IPlayersFinder{
 	}
 	
     public static Point [] findPlayers (String[] photo, int team, int threshold){
-    	if(photo.length == 0)
-    		return ;
+    	if(photo.length == 0) {
+    		Point ss [] = new Point[0];
+    		return ss;
+    	}
     	boolean arr[][] = new boolean[photo.length][photo[0].length()];
     	for (int i = 0; i < photo.length; ++i) {
     		for(int j = 0; j < photo[i].length(); ++j) {
@@ -90,13 +92,5 @@ public class findPlayer implements IPlayersFinder{
     		search(arr, x, y-1);
     	}
     	return counter;
-    }
-    public static void main(String args[]) {
-    	String p[] = {};
-    	
-    	Point ans[] = findPlayers(p, 8, 9);
-    	for(int i = 0; i < ans.length; ++i) {
-    		System.out.println(ans[i].x + " " + ans[i].y);
-    	}
     }
 }
