@@ -53,8 +53,4 @@ public class Stack{
         System.out.println();
         anyStack = tempStack;
     }
-	public static void main(String args[]) {
-		Stack s = new Stack();
-		s.peek();
-	}
 }
