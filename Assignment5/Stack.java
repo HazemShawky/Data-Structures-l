@@ -40,17 +40,4 @@ public class Stack{
 			this.push(t.pop());
 		return cnt;
 	}
-	public static void printStack(Stack anyStack) {
-        int size = anyStack.size();
-        Stack tempStack = new Stack();
-        Object temp;
-        while (size > 0) {
-            temp = anyStack.pop();
-            System.out.print(temp + " ");
-            tempStack.push(temp);
-            size--;
-        }
-        System.out.println();
-        anyStack = tempStack;
-    }
 }
