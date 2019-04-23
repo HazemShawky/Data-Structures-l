@@ -24,7 +24,7 @@ public class ExpressionEvaluator {
 		else
 			throw new RuntimeException("error");
 	}
-	public static String infixToPostfix(String expression) {
+	public String infixToPostfix(String expression) {
 		String ans= new String("");
 		Stack s = new Stack();
 		expression += ' ';
@@ -59,5 +59,41 @@ public class ExpressionEvaluator {
 	            ans += ' ';
 			}
 		return ans;
+	}
+	public int evaluate(String expression) {
+		int ans = 0;
+		String c = "";
+		Stack s = new Stack();
+		for(int i = 0; i < expression.length(); ++i) {
+			if(expression.charAt(i)==' ') {
+				if (c != "")
+					s.push(Integer.parseInt(c));
+				c = "";
+			}
+			else if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '*'  || expression.charAt(i) == '/' )
+			{
+				int operand1 = (int)s.pop();
+				int operand2 = (int)s.pop();
+				switch(expression.charAt(i)) {
+				 case '+':
+					 ans += operand1 + operand2;
+					 break;
+				 case '-':
+					 ans += operand2 - operand2;
+					 break;
+				 case '*':
+					 ans += operand1 * operand2;
+					 break;
+				 case '/':
+					 ans += operand2 / operand1;
+					 break;
+				}
+				s.push(ans);
+				ans = 0;
+			}
+			else
+				c += expression.charAt(i);
+		}
+		return (int)s.pop();
 	}
   }
