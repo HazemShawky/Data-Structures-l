@@ -1,8 +1,7 @@
 package eg.edu.alexu.csd.datastructure.stack.cs23;
 /**
-* Java class example
-* The class illustrates how to write comments used
-* to generate JavaDoc documentation
+* Java class implements IStack
+* The class contains the implementaion of the stack by using nodes.
 *
 * @author Hazem Shawky
 * @version  27 April 2019
